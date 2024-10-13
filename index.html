@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+<div id="all">
+    <h1>Gra w dzika</h1>
+    <p class="maintext">Gdy zauważysz liczbę podzielną przez 7, lub zawierającą liczbę 7 w sobie, kliknij przycisk.</p>
+    <p class="duza" id="score">0</p>
+    <div>
+        <button class="buttonstart" id="startbutton">
+            <b>
+                Start
+            </b>   
+        </button>
+        <br><br>
+        <button class="buttonstart" id="harderstartbutton">
+            <b>
+                Start (tryb trudniejszy)
+            </b>
+
+        </button>
+        <br><br>
+        <button class="buttonstart" id="hardeststartbutton">
+            <b>
+                Start (tryb najtrudniejszy)
+            </b>
+        </button>
+    </div>
+    <br>
+    <div>
+        <button class="button" id="dzik" >
+            <img src="boar.png" class="image">
+        </button>
+    </div>
+    <br>
+    <div class="highscore" id="normalhs"><p><b>Highscore (tryb zwykły): </b></p><p id="highscore"></p></div>
+    <div class="highscore" id="harderhs"><p><b>Highscore (tryb trudniejszy): </b></p><p id="highscore"></p></div>
+    <div class="highscore" id="hardesths"><p><b>Highscore (tryb najtrudniejszy): </b></p><p id="highscore"></p></div>
+    <script src="script.js"></script>
+
+
+</div>
+</body>
+</html>
