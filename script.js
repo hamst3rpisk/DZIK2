@@ -7,6 +7,24 @@ let hscore = 0;
 let harderhscore = 0;
 let hardesthscore = 0;
 let difficultyflag;
+const cursor = document.querySelector("#cursor");
+document.addEventListener('mousemove',function(e) {
+    var xCord = e.pageX;
+    var yCord = e.pageY;
+    console.log(xCord,yCord);
+    cursor.style.position="absolute";
+    cursor.style.left=xCord + 0.25 + "px";
+    cursor.style.top=yCord + 0.25 + "px";
+    
+})
+document.addEventListener('click',function(e) {
+    cursor.classList.add("cursoranimation");
+    setTimeout(function() {cursor.classList.remove("cursoranimation")},250);
+
+    
+})
+
+
 
 const bodybg = document.querySelector("#bodybg");
 const startbtn = document.querySelector("#startbutton");
@@ -64,15 +82,15 @@ function dzik() {
     else {
         if (difficultyflag==1 && score > hscore) {
             hscore=score;
-            pnormalhs.innerHTML="Highscore (tryb zwykły) " + score;
+            pnormalhs.innerHTML="Highscore (tryb zwykły): " + score;
         }
         if (difficultyflag==2 && score > harderhscore) {
             harderhscore=score;
-            pharderhs.innerHTML="Highscore (tryb trudniejszy) " + score;
+            pharderhs.innerHTML="Highscore (tryb trudniejszy): " + score;
         }
         if (difficultyflag==3 && score > hardesthscore) {
             hardesthscore=score;
-            phardesths.innerHTML="Highscore (tryb najtrudniejszy) " + score;
+            phardesths.innerHTML="Highscore (tryb najtrudniejszy): " + score;
         }
         alert("Liczba " + score + " nie jest podzielna przez 7 ani nie zawiera w sobie 7");
         score = 0;
@@ -91,15 +109,15 @@ function checkDzik() {
     if (dzikflag == false){
         if (difficultyflag==1 && score > hscore) {
             hscore=score;
-            pnormalhs.innerHTML="Highscore (tryb zwykły) " + score;
+            pnormalhs.innerHTML="Highscore (tryb zwykły): " + score;
         }
         if (difficultyflag==2 && score > harderhscore) {
             harderhscore=score;
-            pharderhs.innerHTML="Highscore (tryb trudniejszy) " + score;
+            pharderhs.innerHTML="Highscore (tryb trudniejszy): " + score;
         }
         if (difficultyflag==3 && score > hardesthscore) {
             hardesthscore=score;
-            phardesths.innerHTML="Highscore (tryb najtrudniejszy) " + score;
+            phardesths.innerHTML="Highscore (tryb najtrudniejszy): " + score;
         }
         
         score = 0;
