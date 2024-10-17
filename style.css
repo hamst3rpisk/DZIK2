@@ -74,12 +74,13 @@ html
     border-width: 2em;
     border-color: black;
     margin:auto;
+    box-shadow: 0 0 2px 1px #FFFF;
     
     
 }
 .cursoranimation {
     animation-name: pulsingclick;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
 }
 .correctans {
@@ -137,12 +138,15 @@ body {
 }
 @keyframes pulsingclick {
     0% {
+        transform: scale(0.97);
         box-shadow: 0 0 0 0 rgba(0,0,0,0.6);
     }
     15% {
-        box-shadow: 0 0 0 10px rgba(0,0,0,0);
+        transform: scale(1);
+        box-shadow: 0 0 10px 5px rgba(0,0,0,0);
     }
     100% {
+        transform:scale(0.97);
         box-shadow: 0 0 0 0 rgba(0,0,0,0);
     }
 }
@@ -203,5 +207,3 @@ h1 {
 .hidden {
     display:none;
 }
-
-
