@@ -185,6 +185,7 @@ h1 {
     box-shadow:0 0 0 0 rgba(0,0,0,1);
     transform:scale(1);
     cursor: none;
+    
 }
 #dzik:hover {
     transform: translateY(-3px);
@@ -207,3 +208,4 @@ h1 {
 .hidden {
     display:none;
 }
+
