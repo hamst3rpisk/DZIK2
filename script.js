@@ -38,6 +38,7 @@ hardeststartbtn.addEventListener("click",hardestdifficulty);
 
 const btn = document.querySelector("#dzik");
 btn.addEventListener("click",dzik);
+btn.disabled=true;
 
 pnormalhs = document.querySelector("#normalhs");
 pharderhs = document.querySelector("#harderhs");
@@ -77,6 +78,7 @@ function start()
         {
             mainp[i].classList.add("hidden");
         }
+    btn.disabled=false;
 }
 
 function dzik() {
@@ -115,7 +117,7 @@ function dzik() {
             {
                 mainp[i].classList.remove("hidden");
             }
-        
+        btn.disabled=true;
     }
 }
 function checkDzik() {
@@ -147,7 +149,7 @@ function checkDzik() {
             {
                 mainp[i].classList.remove("hidden");
             }
-
+        btn.disabled=true;
     }
 }
 function incdelay() {
@@ -167,3 +169,4 @@ function incrementscore()
     setTimeout(incdelay,anstimer+10);
 
 }
+
