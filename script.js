@@ -8,6 +8,8 @@ let harderhscore = 0;
 let hardesthscore = 0;
 let difficultyflag;
 const cursor = document.querySelector("#cursor");
+const mainp = document.querySelectorAll(".maintext");
+const highscp = document.querySelectorAll(".highscore");
 document.addEventListener('mousemove',function(e) {
     var xCord = e.pageX;
     var yCord = e.pageY;
@@ -40,6 +42,8 @@ btn.addEventListener("click",dzik);
 pnormalhs = document.querySelector("#normalhs");
 pharderhs = document.querySelector("#harderhs");
 phardesths = document.querySelector("#hardesths");
+
+
 function normaldifficulty()
 {
     difficultyflag=1;
@@ -65,10 +69,14 @@ function start()
     startbtn.classList.add("hidden");
     harderstartbtn.classList.add("hidden");
     hardeststartbtn.classList.add("hidden");
-    pnormalhs.classList.add("hidden");
-    pharderhs.classList.add("hidden");
-    phardesths.classList.add("hidden");
-    bodybg.classList.add("bgchange");
+    for (let i=0; i<highscp.length;i++)
+        {
+            highscp[i].classList.add("hidden");
+        }
+    for (let i=0; i<mainp.length;i++)
+        {
+            mainp[i].classList.add("hidden");
+        }
 }
 
 function dzik() {
@@ -99,10 +107,15 @@ function dzik() {
         startbtn.classList.remove("hidden");
         harderstartbtn.classList.remove("hidden");
         hardeststartbtn.classList.remove("hidden");
-        pnormalhs.classList.remove("hidden");
-        pharderhs.classList.remove("hidden");
-        phardesths.classList.remove("hidden");
-        bodybg.classList.remove("bgchange");
+        for (let i=0; i<highscp.length;i++)
+            {
+                highscp[i].classList.remove("hidden");
+            }
+        for (let i=0; i<mainp.length;i++)
+            {
+                mainp[i].classList.remove("hidden");
+            }
+        
     }
 }
 function checkDzik() {
@@ -126,10 +139,14 @@ function checkDzik() {
         startbtn.classList.remove("hidden");
         harderstartbtn.classList.remove("hidden");
         hardeststartbtn.classList.remove("hidden");
-        pnormalhs.classList.remove("hidden");
-        pharderhs.classList.remove("hidden");
-        phardesths.classList.remove("hidden");
-        bodybg.classList.remove("bgchange");
+        for (let i=0; i<highscp.length;i++)
+            {
+                highscp[i].classList.remove("hidden");
+            }
+        for (let i=0; i<mainp.length;i++)
+            {
+                mainp[i].classList.remove("hidden");
+            }
 
     }
 }
@@ -150,4 +167,3 @@ function incrementscore()
     setTimeout(incdelay,anstimer+10);
 
 }
-
