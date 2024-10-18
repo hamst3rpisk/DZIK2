@@ -118,6 +118,7 @@ function dzik() {
                 mainp[i].classList.remove("hidden");
             }
         btn.disabled=true;
+        reactp.classList.add("hidden");
     }
 }
 function checkDzik() {
@@ -150,23 +151,42 @@ function checkDzik() {
                 mainp[i].classList.remove("hidden");
             }
         btn.disabled=true;
+        reactp.classList.add("hidden");
     }
 }
+let reacttime=0;
+let starttime;
+let reactp = document.querySelector("#react");
 function incdelay() {
     dzikflag=false;
     score+=1;
 }
+function Starttimer() {
+    starttime = new Date();
+}
+function Endtime() {
+    endtime = new Date();
+    reacttime = endtime-starttime;
+    reactp.classList.remove("hidden");
+    reactp.innerHTML="Twój czas reakcji to: " +reacttime/1000 + "s";
+    setTimeout(function() {reactp.innerHTML=0; reactp.classList.add("hidden");},1000);
+}
+
 function incrementscore()
 {
+    
     
     pscore.innerHTML=score;
     scorestring = score.toString();
     if (((score%7)==0 || scorestring.includes("7")) && score!=0) {
+        Starttimer();
         console.log(dzikflag);
         setTimeout(checkDzik,anstimer);
+        
     }
     console.log(dzikflag);
     setTimeout(incdelay,anstimer+10);
 
-}
+    console.log(new Date());
 
+}
